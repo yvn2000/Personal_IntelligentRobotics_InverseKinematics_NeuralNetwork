@@ -7,11 +7,12 @@ This document is divided into 2 primary sections:
 - Python Code Scripts
 - Webots Robot Scripts
 
-The order in which the files should be executed is represented by the order of the subheading in this document.
+The order in which the files should be executed is represented by the order of the subheadings in this document.
 
-### Dependency
+### IMPORTANT: Dependencies
 
-A library called pickle was used to save the trained models as a separate file. If this library is not installed on the machine, it must be by running "pip install pickle" or "pip install pickle5" or whichever installation process works for you.
+The project code uses two external libraries: numpy and scikit learn, both are permitted by the coursework specification. However in case your system does not have them, it is imperative that you run the python file titled "install_dependencies.py" You can find this file in the root folder. Run this regardless, just in case.
+
 
 ### Preliminary Step
 Note: All datasets generated are stored in the datasets folder. The generated models for each dataset size are stored in the models folder.
