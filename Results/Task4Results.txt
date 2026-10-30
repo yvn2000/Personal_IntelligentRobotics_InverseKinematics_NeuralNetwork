@@ -1,0 +1,117 @@
+TASK 4A FINAL RESULTS:
+
+
+==================== SMALL MODEL ====================
+
+Training complete!
+Iterations: 496
+Final training loss: 0.001243
+Ned invalid predictions: 13/500 (2.60%)
+SCARA invalid predictions: 23/500 (4.60%)
+
+--- Ned (500 test samples) ---
+TCP Position Error:
+Mean: 7.846 mm
+Std:  7.897 mm
+Joint Errors:
+q1: Mean = -0.02817573 rad, Std = 0.13889719 rad
+q2: Mean = 0.01301809 rad, Std = 0.01254360 rad
+q3: Mean = 0.00535628 rad, Std = 0.00758941 rad
+
+--- SCARA (500 test samples) ---
+TCP Position Error:
+Mean: 4.551 mm
+Std:  2.793 mm
+Joint Errors:
+q1: Mean = -0.01090443 rad, Std = 0.01864747 rad
+q2: Mean = 0.02645669 rad, Std = 0.04343613 rad
+q4: Mean = 0.00000068 m², Std = 0.00000550 m²
+
+==================== MEDIUM MODEL ====================
+
+Training complete!
+Iterations: 248
+Final training loss: 0.000583
+Ned invalid predictions: 10/500 (2.00%)
+SCARA invalid predictions: 3/500 (0.60%)
+
+--- Ned (500 test samples) ---
+TCP Position Error:
+Mean: 7.576 mm
+Std:  5.666 mm
+Joint Errors:
+q1: Mean = -0.01918530 rad, Std = 0.03844344 rad
+q2: Mean = 0.01488653 rad, Std = 0.01004488 rad
+q3: Mean = 0.00360348 rad, Std = 0.00484201 rad
+
+--- SCARA (500 test samples) ---
+TCP Position Error:
+Mean: 4.750 mm
+Std:  2.314 mm
+Joint Errors:
+q1: Mean = -0.01803674 rad, Std = 0.01365893 rad
+q2: Mean = 0.02196036 rad, Std = 0.02737905 rad
+q4: Mean = 0.00000016 m², Std = 0.00000043 m²
+
+==================== LARGE MODEL ====================
+
+Training complete!
+Iterations: 186
+Final training loss: 0.000628
+Ned invalid predictions: 2/500 (0.40%)
+SCARA invalid predictions: 5/500 (1.00%)
+
+--- Ned (500 test samples) ---
+TCP Position Error:
+Mean: 8.380 mm
+Std:  7.194 mm
+Joint Errors:
+q1: Mean = 0.02623717 rad, Std = 0.04913066 rad
+q2: Mean = 0.01074399 rad, Std = 0.00803839 rad
+q3: Mean = 0.00057779 rad, Std = 0.00508965 rad
+
+--- SCARA (500 test samples) ---
+TCP Position Error:
+Mean: 2.582 mm
+Std:  1.595 mm
+Joint Errors:
+q1: Mean = -0.00825505 rad, Std = 0.01046150 rad
+q2: Mean = 0.00967037 rad, Std = 0.02232347 rad
+q4: Mean = 0.00000016 m², Std = 0.00000125 m²
+
+
+
+
+
+
+
+TASK 4B FINAL RESULTS:
+
+==================== SMALL MODEL ====================
+--- Ned SMALL Results ---
+Samples: 100
+Mean TCP error: 8.982 mm
+Std TCP error:  11.370 mm
+--- SCARA SMALL Results ---
+Samples: 100
+Mean TCP error: 4.721 mm
+Std TCP error:  3.283 mm
+==================== MEDIUM MODEL ====================
+--- Ned MEDIUM Results ---
+Samples: 100
+Mean TCP error: 7.830 mm
+Std TCP error:  5.009 mm
+--- SCARA MEDIUM Results ---
+Samples: 100
+Mean TCP error: 4.610 mm
+Std TCP error:  2.296 mm
+==================== LARGE MODEL ====================
+--- Ned LARGE Results ---
+Samples: 100
+Mean TCP error: 9.588 mm
+Std TCP error:  8.272 mm
+--- SCARA LARGE Results ---
+Samples: 100
+Mean TCP error: 2.766 mm
+Std TCP error:  1.823 mm
+

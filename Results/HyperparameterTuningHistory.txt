@@ -1,0 +1,1804 @@
+Hyperparameter	Final configuration
+Hidden layers	2
+Neurons per hidden layer	256, 256
+Activation	ReLU
+Optimizer	Adam
+Initial learning rate	0.001
+Maximum iterations	2,000
+Tolerance	1 × 10⁻⁷
+Iterations without improvement	30
+Early stopping	False
+Random state	42
+Loss function	Squared error
+Selected architecture	6 → 256 → 256 → 3
+
+Model	Actual iterations	Final training loss
+Small	496	0.001243
+Medium	248	0.000583
+Large	186	0.000628
+
+
+
+
+Experiment 1:
+
+unnormalized TCP; Input(5): 2 flags, x,y,z; No Clipping
+
+model = MLPRegressor(
+        hidden_layer_sizes=(64, 64),
+        activation="relu",
+        solver="adam",
+        learning_rate_init=0.001,
+        max_iter=1000,
+        early_stopping=False,
+        random_state=42
+    )
+==================== SMALL DATASET ====================
+
+Training complete!
+Iterations: 319
+Final training loss: 0.004188
+
+Validation Results:
+MAE:  0.061179
+RMSE: 0.096662
+
+Per-joint MAE:
+Joint 1: 0.042451
+Joint 2: 0.111561
+Joint 3: 0.029527
+
+Ned Validation Results:
+Samples: 200
+MAE:  0.045579
+RMSE: 0.068369
+Per-joint MAE:
+Joint 1: 0.043381
+Joint 2: 0.052512
+Joint 3: 0.040845
+
+SCARA Validation Results:
+Samples: 200
+MAE:  0.076779
+RMSE: 0.118376
+Per-joint MAE:
+Joint 1: 0.041520
+Joint 2: 0.170610
+Joint 3: 0.018209
+
+Ned TCP Positioning Error:
+Mean:   24.288 mm
+Median: 19.620 mm
+Max:    97.392 mm
+
+SCARA TCP Positioning Error:
+Mean:   7.762 mm
+Median: 7.149 mm
+Max:    32.188 mm
+
+==================== MEDIUM DATASET ====================
+
+Training complete!
+Iterations: 84
+Final training loss: 0.003352
+
+Validation Results:
+MAE:  0.048218
+RMSE: 0.077132
+
+Per-joint MAE:
+Joint 1: 0.036410
+Joint 2: 0.082857
+Joint 3: 0.025387
+
+Ned Validation Results:
+Samples: 1000
+MAE:  0.038082
+RMSE: 0.055038
+Per-joint MAE:
+Joint 1: 0.036889
+Joint 2: 0.043020
+Joint 3: 0.034336
+
+SCARA Validation Results:
+Samples: 1000
+MAE:  0.058355
+RMSE: 0.094177
+Per-joint MAE:
+Joint 1: 0.035931
+Joint 2: 0.122695
+Joint 3: 0.016438
+
+Ned TCP Positioning Error:
+Mean:   21.130 mm
+Median: 16.683 mm
+Max:    97.505 mm
+
+SCARA TCP Positioning Error:
+Mean:   6.732 mm
+Median: 5.955 mm
+Max:    24.745 mm
+
+==================== LARGE DATASET ====================
+
+Training complete!
+Iterations: 59
+Final training loss: 0.003322
+
+Validation Results:
+MAE:  0.047316
+RMSE: 0.075575
+
+Per-joint MAE:
+Joint 1: 0.033764
+Joint 2: 0.085162
+Joint 3: 0.023022
+
+Ned Validation Results:
+Samples: 2000
+MAE:  0.033565
+RMSE: 0.048071
+Per-joint MAE:
+Joint 1: 0.031400
+Joint 2: 0.038271
+Joint 3: 0.031025
+
+SCARA Validation Results:
+Samples: 2000
+MAE:  0.061067
+RMSE: 0.095458
+Per-joint MAE:
+Joint 1: 0.036128
+Joint 2: 0.132054
+Joint 3: 0.015020
+
+Ned TCP Positioning Error:
+Mean:   17.729 mm
+Median: 14.548 mm
+Max:    91.085 mm
+
+SCARA TCP Positioning Error:
+Mean:   5.487 mm
+Median: 5.046 mm
+Max:    18.900 mm
+
+
+
+
+
+
+
+
+Experiment 2:
+
+unnormalized TCP; Input(5): 2 flags, x,y,z; No Clipping
+
+model = MLPRegressor(
+        hidden_layer_sizes=(64, 64),
+        activation="relu",
+        solver="adam",
+        learning_rate_init=0.001,
+        max_iter=2000,
+        tol=1e-7,
+        n_iter_no_change=30,
+        early_stopping=False,
+        random_state=42
+    )
+==================== SMALL DATASET ====================
+
+Training complete!
+Iterations: 586
+Final training loss: 0.003196
+
+Validation Results:
+MAE:  0.047267
+RMSE: 0.077589
+
+Per-joint MAE:
+Joint 1: 0.033757
+Joint 2: 0.084782
+Joint 3: 0.023263
+
+Ned Validation Results:
+Samples: 200
+MAE:  0.035133
+RMSE: 0.052609
+Per-joint MAE:
+Joint 1: 0.032649
+Joint 2: 0.040584
+Joint 3: 0.032165
+
+SCARA Validation Results:
+Samples: 200
+MAE:  0.059402
+RMSE: 0.096293
+Per-joint MAE:
+Joint 1: 0.034865
+Joint 2: 0.128979
+Joint 3: 0.014361
+
+Ned TCP Positioning Error:
+Mean:   18.186 mm
+Median: 14.774 mm
+Max:    57.122 mm
+
+SCARA TCP Positioning Error:
+Mean:   4.824 mm
+Median: 3.946 mm
+Max:    24.814 mm
+
+==================== MEDIUM DATASET ====================
+
+Training complete!
+Iterations: 213
+Final training loss: 0.002689
+
+Validation Results:
+MAE:  0.041908
+RMSE: 0.072697
+
+Per-joint MAE:
+Joint 1: 0.027386
+Joint 2: 0.079828
+Joint 3: 0.018512
+
+Ned Validation Results:
+Samples: 1000
+MAE:  0.028038
+RMSE: 0.039328
+Per-joint MAE:
+Joint 1: 0.022101
+Joint 2: 0.037240
+Joint 3: 0.024772
+
+SCARA Validation Results:
+Samples: 1000
+MAE:  0.055779
+RMSE: 0.094990
+Per-joint MAE:
+Joint 1: 0.032670
+Joint 2: 0.122416
+Joint 3: 0.012252
+
+Ned TCP Positioning Error:
+Mean:   13.939 mm
+Median: 11.604 mm
+Max:    59.129 mm
+
+SCARA TCP Positioning Error:
+Mean:   5.213 mm
+Median: 4.129 mm
+Max:    42.769 mm
+
+==================== LARGE DATASET ====================
+
+Training complete!
+Iterations: 256
+Final training loss: 0.002736
+
+Validation Results:
+MAE:  0.038674
+RMSE: 0.071180
+
+Per-joint MAE:
+Joint 1: 0.026423
+Joint 2: 0.073548
+Joint 3: 0.016052
+
+Ned Validation Results:
+Samples: 2000
+MAE:  0.022798
+RMSE: 0.033195
+Per-joint MAE:
+Joint 1: 0.020178
+Joint 2: 0.025973
+Joint 3: 0.022244
+
+SCARA Validation Results:
+Samples: 2000
+MAE:  0.054550
+RMSE: 0.095033
+Per-joint MAE:
+Joint 1: 0.032667
+Joint 2: 0.121123
+Joint 3: 0.009861
+
+Ned TCP Positioning Error:
+Mean:   11.708 mm
+Median: 9.539 mm
+Max:    69.300 mm
+
+SCARA TCP Positioning Error:
+Mean:   4.627 mm
+Median: 3.688 mm
+Max:    21.663 mm
+
+
+
+
+
+
+Experiment 3:
+
+NORMALIZED TCP; Input(5): 2 flags, x,y,z; No Clipping
+
+model = MLPRegressor(
+        hidden_layer_sizes=(64, 64),
+        activation="relu",
+        solver="adam",
+        learning_rate_init=0.001,
+        max_iter=2000,
+        tol=1e-7,
+        n_iter_no_change=30,
+        early_stopping=False,
+        random_state=42
+    )
+==================== LARGE DATASET ====================
+
+Training complete!
+Iterations: 559
+Final training loss: 0.000756
+
+Validation Results:
+MAE:  0.026069
+RMSE: 0.043165
+
+Per-joint MAE:
+Joint 1: 0.015044
+Joint 2: 0.051430
+Joint 3: 0.011732
+
+Ned Validation Results:
+Samples: 2000
+MAE:  0.019918
+RMSE: 0.029244
+Per-joint MAE:
+Joint 1: 0.014664
+Joint 2: 0.030839
+Joint 3: 0.014251
+
+SCARA Validation Results:
+Samples: 2000
+MAE:  0.032219
+RMSE: 0.053584
+Per-joint MAE:
+Joint 1: 0.015424
+Joint 2: 0.072021
+Joint 3: 0.009213
+
+Ned TCP Positioning Error:
+Mean:   10.041 mm
+Median: 8.406 mm
+Max:    58.865 mm
+
+SCARA TCP Positioning Error:
+Mean:   3.804 mm
+Median: 3.686 mm
+Max:    13.288 mm
+
+
+Ned Joint Limit Check:
+Total samples: 2000
+Invalid samples: 35
+Invalid percentage: 1.75%
+Violations per joint:
+Joint 1: 9
+Joint 2: 21
+Joint 3: 6
+Prediction ranges:
+Joint 1: Min = -1.0093, Max = 1.0329
+Joint 2: Min = -1.0697, Max = 1.0279
+Joint 3: Min = -1.0066, Max = 1.0153
+
+SCARA Joint Limit Check:
+Total samples: 2000
+Invalid samples: 36
+Invalid percentage: 1.80%
+Violations per joint:
+Joint 1: 5
+Joint 2: 27
+Joint 3: 4
+Prediction ranges:
+Joint 1: Min = -1.0291, Max = 1.0028
+Joint 2: Min = -0.9339, Max = 1.0700
+Joint 3: Min = -0.9964, Max = 1.0095
+
+
+
+
+
+
+
+Experiment 4:
+
+NORMALIZED TCP; Input(5): 2 flags, x,y,z; With Clipping
+
+model = MLPRegressor(
+        hidden_layer_sizes=(64, 64),
+        activation="relu",
+        solver="adam",
+        learning_rate_init=0.001,
+        max_iter=2000,
+        tol=1e-7,
+        n_iter_no_change=30,
+        early_stopping=False,
+        random_state=42
+    )
+==================== LARGE DATASET ====================
+
+Training complete!
+Iterations: 559
+Final training loss: 0.000756
+
+Validation Results:
+MAE:  0.026069
+RMSE: 0.043165
+
+Per-joint MAE:
+Joint 1: 0.015044
+Joint 2: 0.051430
+Joint 3: 0.011732
+
+Ned Validation Results:
+Samples: 2000
+MAE:  0.019918
+RMSE: 0.029244
+Per-joint MAE:
+Joint 1: 0.014664
+Joint 2: 0.030839
+Joint 3: 0.014251
+
+SCARA Validation Results:
+Samples: 2000
+MAE:  0.032219
+RMSE: 0.053584
+Per-joint MAE:
+Joint 1: 0.015424
+Joint 2: 0.072021
+Joint 3: 0.009213
+
+--- WITHOUT CLIPPING ---
+
+Ned TCP Positioning Error:
+Mean:   10.041 mm
+Median: 8.406 mm
+Max:    58.865 mm
+
+SCARA TCP Positioning Error:
+Mean:   3.804 mm
+Median: 3.686 mm
+Max:    13.288 mm
+
+--- WITH CLIPPING ---
+
+Ned TCP Positioning Error:
+Mean:   9.994 mm
+Median: 8.384 mm
+Max:    58.865 mm
+
+SCARA TCP Positioning Error:
+Mean:   3.826 mm
+Median: 3.697 mm
+Max:    14.444 mm
+
+Ned Joint Limit Check:
+Total samples: 2000
+Invalid samples: 35
+Invalid percentage: 1.75%
+Violations per joint:
+Joint 1: 9
+Joint 2: 21
+Joint 3: 6
+Prediction ranges:
+Joint 1: Min = -1.0093, Max = 1.0329
+Joint 2: Min = -1.0697, Max = 1.0279
+Joint 3: Min = -1.0066, Max = 1.0153
+
+SCARA Joint Limit Check:
+Total samples: 2000
+Invalid samples: 36
+Invalid percentage: 1.80%
+Violations per joint:
+Joint 1: 5
+Joint 2: 27
+Joint 3: 4
+Prediction ranges:
+Joint 1: Min = -1.0291, Max = 1.0028
+Joint 2: Min = -0.9339, Max = 1.0700
+Joint 3: Min = -0.9964, Max = 1.0095
+
+
+
+
+
+
+
+
+
+Experiment 5:
+
+NORMALIZED TCP; Input(5): 2 flags, x,y,z; With Clipping
+
+model = MLPRegressor(
+        hidden_layer_sizes=(128, 128),
+        activation="relu",
+        solver="adam",
+        learning_rate_init=0.001,
+        max_iter=2000,
+        tol=1e-7,
+        n_iter_no_change=30,
+        early_stopping=False,
+        random_state=42
+    )
+==================== LARGE DATASET ====================
+
+Training complete!
+Iterations: 362
+Final training loss: 0.000579
+
+Validation Results:
+MAE:  0.015482
+RMSE: 0.028567
+
+Per-joint MAE:
+Joint 1: 0.012431
+Joint 2: 0.027261
+Joint 3: 0.006754
+
+Ned Validation Results:
+Samples: 2000
+MAE:  0.012914
+RMSE: 0.021412
+Per-joint MAE:
+Joint 1: 0.015217
+Joint 2: 0.013601
+Joint 3: 0.009925
+
+SCARA Validation Results:
+Samples: 2000
+MAE:  0.018050
+RMSE: 0.034259
+Per-joint MAE:
+Joint 1: 0.009645
+Joint 2: 0.040922
+Joint 3: 0.003584
+
+--- WITHOUT CLIPPING ---
+
+Ned TCP Positioning Error:
+Mean:   8.172 mm
+Median: 6.088 mm
+Max:    71.214 mm
+
+SCARA TCP Positioning Error:
+Mean:   2.990 mm
+Median: 2.865 mm
+Max:    9.837 mm
+
+--- WITH CLIPPING ---
+
+Ned TCP Positioning Error:
+Mean:   8.160 mm
+Median: 6.082 mm
+Max:    71.214 mm
+
+SCARA TCP Positioning Error:
+Mean:   2.995 mm
+Median: 2.868 mm
+Max:    9.837 mm
+
+Ned Joint Limit Check:
+Total samples: 2000
+Invalid samples: 18
+Invalid percentage: 0.90%
+Violations per joint:
+Joint 1: 6
+Joint 2: 5
+Joint 3: 7
+Prediction ranges:
+Joint 1: Min = -1.0109, Max = 0.9686
+Joint 2: Min = -1.0097, Max = 1.0300
+Joint 3: Min = -1.0055, Max = 1.0155
+
+SCARA Joint Limit Check:
+Total samples: 2000
+Invalid samples: 16
+Invalid percentage: 0.80%
+Violations per joint:
+Joint 1: 4
+Joint 2: 9
+Joint 3: 3
+Prediction ranges:
+Joint 1: Min = -1.0178, Max = 0.9935
+Joint 2: Min = -0.9052, Max = 1.0256
+Joint 3: Min = -1.0030, Max = 1.0048
+
+
+
+
+
+Experiment 6:
+
+NORMALIZED TCP;
+Input(6): 2 flags, x,y,z, horizontal_radius(sqrt(x^2+y^2));
+With Clipping
+
+model = MLPRegressor(
+        hidden_layer_sizes=(128, 128),
+        activation="relu",
+        solver="adam",
+        learning_rate_init=0.001,
+        max_iter=2000,
+        tol=1e-7,
+        n_iter_no_change=30,
+        early_stopping=False,
+        random_state=42
+    )
+==================== LARGE DATASET ====================
+
+Training complete!
+Iterations: 383
+Final training loss: 0.000545
+
+Validation Results:
+MAE:  0.017175
+RMSE: 0.028025
+
+Per-joint MAE:
+Joint 1: 0.011080
+Joint 2: 0.033747
+Joint 3: 0.006697
+
+Ned Validation Results:
+Samples: 2000
+MAE:  0.014609
+RMSE: 0.023296
+Per-joint MAE:
+Joint 1: 0.008206
+Joint 2: 0.027706
+Joint 3: 0.007914
+
+SCARA Validation Results:
+Samples: 2000
+MAE:  0.019740
+RMSE: 0.032064
+Per-joint MAE:
+Joint 1: 0.013955
+Joint 2: 0.039787
+Joint 3: 0.005479
+
+--- WITHOUT CLIPPING ---
+
+Ned TCP Positioning Error:
+Mean:   6.811 mm
+Median: 5.715 mm
+Max:    36.840 mm
+
+SCARA TCP Positioning Error:
+Mean:   2.357 mm
+Median: 2.246 mm
+Max:    8.488 mm
+
+--- WITH CLIPPING ---
+
+Ned TCP Positioning Error:
+Mean:   6.803 mm
+Median: 5.715 mm
+Max:    36.840 mm
+
+SCARA TCP Positioning Error:
+Mean:   2.352 mm
+Median: 2.239 mm
+Max:    8.488 mm
+
+Ned Joint Limit Check:
+Total samples: 2000
+Invalid samples: 14
+Invalid percentage: 0.70%
+Violations per joint:
+Joint 1: 5
+Joint 2: 6
+Joint 3: 3
+Prediction ranges:
+Joint 1: Min = -1.0092, Max = 1.0018
+Joint 2: Min = -1.0224, Max = 0.9854
+Joint 3: Min = -1.0104, Max = 1.0148
+
+SCARA Joint Limit Check:
+Total samples: 2000
+Invalid samples: 16
+Invalid percentage: 0.80%
+Violations per joint:
+Joint 1: 8
+Joint 2: 5
+Joint 3: 3
+Prediction ranges:
+Joint 1: Min = -0.9863, Max = 1.0162
+Joint 2: Min = -0.8701, Max = 1.0248
+Joint 3: Min = -0.9998, Max = 1.0089
+
+
+
+
+
+
+
+Experiment 7:
+
+unnormalized TCP;
+Input(6): 2 flags, x,y,z, horizontal_radius(sqrt(x^2+y^2));
+With Clipping
+
+model = MLPRegressor(
+        hidden_layer_sizes=(128, 128),
+        activation="relu",
+        solver="adam",
+        learning_rate_init=0.001,
+        max_iter=2000,
+        tol=1e-7,
+        n_iter_no_change=30,
+        early_stopping=False,
+        random_state=42
+    )
+==================== LARGE DATASET ====================
+
+Training complete!
+Iterations: 352
+Final training loss: 0.000503
+
+Validation Results:
+MAE:  0.011749
+RMSE: 0.026021
+
+Per-joint MAE:
+Joint 1: 0.009675
+Joint 2: 0.020925
+Joint 3: 0.004648
+
+Ned Validation Results:
+Samples: 2000
+MAE:  0.008351
+RMSE: 0.020653
+Per-joint MAE:
+Joint 1: 0.009154
+Joint 2: 0.009178
+Joint 3: 0.006721
+
+SCARA Validation Results:
+Samples: 2000
+MAE:  0.015148
+RMSE: 0.030456
+Per-joint MAE:
+Joint 1: 0.010196
+Joint 2: 0.032673
+Joint 3: 0.002576
+
+--- WITHOUT CLIPPING ---
+
+Ned TCP Positioning Error:
+Mean:   4.373 mm
+Median: 3.545 mm
+Max:    33.402 mm
+
+SCARA TCP Positioning Error:
+Mean:   2.121 mm
+Median: 1.657 mm
+Max:    14.203 mm
+
+--- WITH CLIPPING ---
+
+Ned TCP Positioning Error:
+Mean:   4.355 mm
+Median: 3.522 mm
+Max:    33.402 mm
+
+SCARA TCP Positioning Error:
+Mean:   2.119 mm
+Median: 1.651 mm
+Max:    14.203 mm
+
+Ned Joint Limit Check:
+Total samples: 2000
+Invalid samples: 17
+Invalid percentage: 0.85%
+Violations per joint:
+Joint 1: 8
+Joint 2: 9
+Joint 3: 0
+Prediction ranges:
+Joint 1: Min = -1.0157, Max = 1.0068
+Joint 2: Min = -1.0066, Max = 1.0300
+Joint 3: Min = -0.9939, Max = 0.9997
+
+SCARA Joint Limit Check:
+Total samples: 2000
+Invalid samples: 33
+Invalid percentage: 1.65%
+Violations per joint:
+Joint 1: 3
+Joint 2: 26
+Joint 3: 4
+Prediction ranges:
+Joint 1: Min = -1.0232, Max = 0.9910
+Joint 2: Min = -0.8422, Max = 1.0359
+Joint 3: Min = -1.0049, Max = 0.9961
+
+
+
+
+
+
+Experiment 8:
+
+unnormalized TCP;
+Input(5): 2 flags, x,y,z;
+With Clipping
+
+model = MLPRegressor(
+        hidden_layer_sizes=(128, 128),
+        activation="relu",
+        solver="adam",
+        learning_rate_init=0.001,
+        max_iter=2000,
+        tol=1e-7,
+        n_iter_no_change=30,
+        early_stopping=False,
+        random_state=42
+    )
+==================== LARGE DATASET ====================
+
+Training complete!
+Iterations: 456
+Final training loss: 0.000850
+
+Validation Results:
+MAE:  0.018129
+RMSE: 0.033989
+
+Per-joint MAE:
+Joint 1: 0.012204
+Joint 2: 0.034445
+Joint 3: 0.007739
+
+Ned Validation Results:
+Samples: 2000
+MAE:  0.014263
+RMSE: 0.023418
+Per-joint MAE:
+Joint 1: 0.011349
+Joint 2: 0.019225
+Joint 3: 0.012216
+
+SCARA Validation Results:
+Samples: 2000
+MAE:  0.021995
+RMSE: 0.041977
+Per-joint MAE:
+Joint 1: 0.013060
+Joint 2: 0.049664
+Joint 3: 0.003261
+
+--- WITHOUT CLIPPING ---
+
+Ned TCP Positioning Error:
+Mean:   7.139 mm
+Median: 5.986 mm
+Max:    41.036 mm
+
+SCARA TCP Positioning Error:
+Mean:   2.197 mm
+Median: 1.946 mm
+Max:    8.792 mm
+
+--- WITH CLIPPING ---
+
+Ned TCP Positioning Error:
+Mean:   7.076 mm
+Median: 5.966 mm
+Max:    41.036 mm
+
+SCARA TCP Positioning Error:
+Mean:   2.165 mm
+Median: 1.922 mm
+Max:    7.841 mm
+
+Ned Joint Limit Check:
+Total samples: 2000
+Invalid samples: 41
+Invalid percentage: 2.05%
+Violations per joint:
+Joint 1: 10
+Joint 2: 28
+Joint 3: 3
+Prediction ranges:
+Joint 1: Min = -1.0233, Max = 1.0199
+Joint 2: Min = -1.0267, Max = 1.1078
+Joint 3: Min = -1.0107, Max = 1.0121
+
+SCARA Joint Limit Check:
+Total samples: 2000
+Invalid samples: 56
+Invalid percentage: 2.80%
+Violations per joint:
+Joint 1: 2
+Joint 2: 49
+Joint 3: 5
+Prediction ranges:
+Joint 1: Min = -1.0157, Max = 0.9901
+Joint 2: Min = -0.8591, Max = 1.0891
+Joint 3: Min = -1.0048, Max = 0.9959
+
+
+
+All 4 configs:
+Input configuration	Ned mean TCP error	SCARA mean TCP error	Overall joint MAE
+Normalized XYZ, no radius	8.172 mm	2.990 mm	0.015482
+Raw XYZ, no radius	7.139 mm	2.197 mm	0.018129
+Normalized XYZ + radius	6.811 mm	2.357 mm	0.017175
+Raw XYZ + radius	4.373 mm	2.121 mm	0.011749
+
+
+
+
+
+Experiment 9:
+
+unnormalized TCP;
+Input(6): 2 flags, x,y,z, horizontal_radius(sqrt(x^2+y^2));
+With Clipping
+
+model = MLPRegressor(
+        hidden_layer_sizes=(128, 128),
+        activation="relu",
+        solver="adam",
+        learning_rate_init=0.001,
+        max_iter=2000,
+        tol=1e-7,
+        n_iter_no_change=30,
+        early_stopping=False,
+        random_state=42
+    )
+=================== SMALL DATASET ====================
+
+Training complete!
+Iterations: 340
+Final training loss: 0.002467
+
+Validation Results:
+MAE:  0.041502
+RMSE: 0.073458
+
+Per-joint MAE:
+Joint 1: 0.031761
+Joint 2: 0.080312
+Joint 3: 0.012432
+
+Ned Validation Results:
+Samples: 200
+MAE:  0.020654
+RMSE: 0.039615
+Per-joint MAE:
+Joint 1: 0.022802
+Joint 2: 0.020732
+Joint 3: 0.018429
+
+SCARA Validation Results:
+Samples: 200
+MAE:  0.062349
+RMSE: 0.096036
+Per-joint MAE:
+Joint 1: 0.040720
+Joint 2: 0.139893
+Joint 3: 0.006435
+
+--- WITHOUT CLIPPING ---
+
+Ned TCP Positioning Error:
+Mean:   11.587 mm
+Median: 8.433 mm
+Max:    76.921 mm
+
+SCARA TCP Positioning Error:
+Mean:   5.743 mm
+Median: 4.832 mm
+Max:    22.565 mm
+
+Ned Joint Limit Check:
+Total samples: 200
+Invalid samples: 4
+Invalid percentage: 2.00%
+Violations per joint:
+Joint 1: 0
+Joint 2: 4
+Joint 3: 0
+Prediction ranges:
+Joint 1: Min = -0.9435, Max = 0.9814
+Joint 2: Min = -0.9745, Max = 1.0696
+Joint 3: Min = -0.9704, Max = 0.9534
+
+SCARA Joint Limit Check:
+Total samples: 200
+Invalid samples: 13
+Invalid percentage: 6.50%
+Violations per joint:
+Joint 1: 1
+Joint 2: 12
+Joint 3: 0
+Prediction ranges:
+Joint 1: Min = -0.9948, Max = 1.0007
+Joint 2: Min = -0.6765, Max = 1.2251
+Joint 3: Min = -0.9991, Max = 0.9670
+
+
+==================== MEDIUM DATASET ====================
+
+Training complete!
+Iterations: 395
+Final training loss: 0.001127
+
+Validation Results:
+MAE:  0.018528
+RMSE: 0.034984
+
+Per-joint MAE:
+Joint 1: 0.012040
+Joint 2: 0.037709
+Joint 3: 0.005836
+
+Ned Validation Results:
+Samples: 1000
+MAE:  0.013374
+RMSE: 0.020045
+Per-joint MAE:
+Joint 1: 0.011114
+Joint 2: 0.020540
+Joint 3: 0.008468
+
+SCARA Validation Results:
+Samples: 1000
+MAE:  0.023683
+RMSE: 0.045231
+Per-joint MAE:
+Joint 1: 0.012966
+Joint 2: 0.054878
+Joint 3: 0.003204
+
+--- WITHOUT CLIPPING ---
+
+Ned TCP Positioning Error:
+Mean:   6.788 mm
+Median: 5.639 mm
+Max:    38.864 mm
+
+SCARA TCP Positioning Error:
+Mean:   3.603 mm
+Median: 3.122 mm
+Max:    33.185 mm
+
+Ned Joint Limit Check:
+Total samples: 1000
+Invalid samples: 8
+Invalid percentage: 0.80%
+Violations per joint:
+Joint 1: 3
+Joint 2: 5
+Joint 3: 0
+Prediction ranges:
+Joint 1: Min = -1.0079, Max = 0.9899
+Joint 2: Min = -1.0117, Max = 1.0083
+Joint 3: Min = -0.9817, Max = 0.9885
+
+SCARA Joint Limit Check:
+Total samples: 1000
+Invalid samples: 18
+Invalid percentage: 1.80%
+Violations per joint:
+Joint 1: 0
+Joint 2: 16
+Joint 3: 2
+Prediction ranges:
+Joint 1: Min = -0.9947, Max = 0.9913
+Joint 2: Min = -0.8294, Max = 1.0580
+Joint 3: Min = -1.0040, Max = 0.9958
+
+
+==================== LARGE DATASET ====================
+
+Training complete!
+Iterations: 352
+Final training loss: 0.000503
+
+Validation Results:
+MAE:  0.011749
+RMSE: 0.026021
+
+Per-joint MAE:
+Joint 1: 0.009675
+Joint 2: 0.020925
+Joint 3: 0.004648
+
+Ned Validation Results:
+Samples: 2000
+MAE:  0.008351
+RMSE: 0.020653
+Per-joint MAE:
+Joint 1: 0.009154
+Joint 2: 0.009178
+Joint 3: 0.006721
+
+SCARA Validation Results:
+Samples: 2000
+MAE:  0.015148
+RMSE: 0.030456
+Per-joint MAE:
+Joint 1: 0.010196
+Joint 2: 0.032673
+Joint 3: 0.002576
+
+--- WITHOUT CLIPPING ---
+
+Ned TCP Positioning Error:
+Mean:   4.373 mm
+Median: 3.545 mm
+Max:    33.402 mm
+
+SCARA TCP Positioning Error:
+Mean:   2.121 mm
+Median: 1.657 mm
+Max:    14.203 mm
+
+Ned Joint Limit Check:
+Total samples: 2000
+Invalid samples: 17
+Invalid percentage: 0.85%
+Violations per joint:
+Joint 1: 8
+Joint 2: 9
+Joint 3: 0
+Prediction ranges:
+Joint 1: Min = -1.0157, Max = 1.0068
+Joint 2: Min = -1.0066, Max = 1.0300
+Joint 3: Min = -0.9939, Max = 0.9997
+
+SCARA Joint Limit Check:
+Total samples: 2000
+Invalid samples: 33
+Invalid percentage: 1.65%
+Violations per joint:
+Joint 1: 3
+Joint 2: 26
+Joint 3: 4
+Prediction ranges:
+Joint 1: Min = -1.0232, Max = 0.9910
+Joint 2: Min = -0.8422, Max = 1.0359
+Joint 3: Min = -1.0049, Max = 0.9961
+
+
+
+
+
+
+Experiment 10 (256, 256 architecture):
+
+unnormalized TCP;
+Input(6): 2 flags, x,y,z, horizontal_radius(sqrt(x^2+y^2));
+With Clipping
+
+model = MLPRegressor(
+        hidden_layer_sizes=(256, 256),
+        activation="relu",
+        solver="adam",
+        learning_rate_init=0.001,
+        max_iter=2000,
+        tol=1e-7,
+        n_iter_no_change=30,
+        early_stopping=False,
+        random_state=42
+    )
+==================== LARGE DATASET ====================
+
+Training complete!
+Iterations: 188
+Final training loss: 0.000995
+
+Validation Results:
+MAE:  0.012700
+RMSE: 0.025290
+
+Per-joint MAE:
+Joint 1: 0.009950
+Joint 2: 0.021797
+Joint 3: 0.006353
+
+Ned Validation Results:
+Samples: 2000
+MAE:  0.008560
+RMSE: 0.015548
+Per-joint MAE:
+Joint 1: 0.008616
+Joint 2: 0.007939
+Joint 3: 0.009125
+
+SCARA Validation Results:
+Samples: 2000
+MAE:  0.016839
+RMSE: 0.032210
+Per-joint MAE:
+Joint 1: 0.011283
+Joint 2: 0.035654
+Joint 3: 0.003581
+
+--- WITHOUT CLIPPING ---
+
+Ned TCP Positioning Error:
+Mean:   4.398 mm
+Median: 3.725 mm
+Max:    24.778 mm
+
+SCARA TCP Positioning Error:
+Mean:   2.058 mm
+Median: 1.544 mm
+Max:    15.275 mm
+
+Ned Joint Limit Check:
+Total samples: 2000
+Invalid samples: 14
+Invalid percentage: 0.70%
+Violations per joint:
+Joint 1: 7
+Joint 2: 4
+Joint 3: 3
+Prediction ranges:
+Joint 1: Min = -0.9968, Max = 1.0183
+Joint 2: Min = -0.9987, Max = 1.0115
+Joint 3: Min = -1.0042, Max = 1.0147
+
+SCARA Joint Limit Check:
+Total samples: 2000
+Invalid samples: 3
+Invalid percentage: 0.15%
+Violations per joint:
+Joint 1: 0
+Joint 2: 1
+Joint 3: 2
+Prediction ranges:
+Joint 1: Min = -0.9858, Max = 0.9988
+Joint 2: Min = -0.8762, Max = 1.0001
+Joint 3: Min = -0.9961, Max = 1.0033
+
+
+
+
+
+
+
+
+Experiment 11 (lr 0.0005):
+
+unnormalized TCP;
+Input(6): 2 flags, x,y,z, horizontal_radius(sqrt(x^2+y^2));
+With Clipping
+
+model = MLPRegressor(
+        hidden_layer_sizes=(256, 256),
+        activation="relu",
+        solver="adam",
+        learning_rate_init=0.0005,
+        max_iter=2000,
+        tol=1e-7,
+        n_iter_no_change=30,
+        early_stopping=False,
+        random_state=42
+    )
+==================== LARGE DATASET ====================
+
+Training complete!
+Iterations: 294
+Final training loss: 0.000447
+
+Validation Results:
+MAE:  0.013707
+RMSE: 0.028324
+
+Per-joint MAE:
+Joint 1: 0.010028
+Joint 2: 0.025753
+Joint 3: 0.005339
+
+Ned Validation Results:
+Samples: 2000
+MAE:  0.012710
+RMSE: 0.021720
+Per-joint MAE:
+Joint 1: 0.010969
+Joint 2: 0.018835
+Joint 3: 0.008327
+
+SCARA Validation Results:
+Samples: 2000
+MAE:  0.014703
+RMSE: 0.033656
+Per-joint MAE:
+Joint 1: 0.009087
+Joint 2: 0.032671
+Joint 3: 0.002350
+
+--- WITHOUT CLIPPING ---
+
+Ned TCP Positioning Error:
+Mean:   6.642 mm
+Median: 5.489 mm
+Max:    27.993 mm
+
+SCARA TCP Positioning Error:
+Mean:   1.423 mm
+Median: 1.186 mm
+Max:    10.432 mm
+
+Ned Joint Limit Check:
+Total samples: 2000
+Invalid samples: 29
+Invalid percentage: 1.45%
+Violations per joint:
+Joint 1: 7
+Joint 2: 21
+Joint 3: 1
+Prediction ranges:
+Joint 1: Min = -1.0090, Max = 1.0302
+Joint 2: Min = -0.9823, Max = 1.0381
+Joint 3: Min = -1.0032, Max = 0.9904
+
+SCARA Joint Limit Check:
+Total samples: 2000
+Invalid samples: 40
+Invalid percentage: 2.00%
+Violations per joint:
+Joint 1: 7
+Joint 2: 30
+Joint 3: 3
+Prediction ranges:
+Joint 1: Min = -1.0592, Max = 0.9828
+Joint 2: Min = -0.7971, Max = 1.0255
+Joint 3: Min = -1.0037, Max = 0.9976
+
+This is our first experiment where a hyperparameter change has benefited one robot substantially while making the other worse.
+
+
+
+
+
+
+
+Experiment 12 (tanh activation):
+
+unnormalized TCP;
+Input(6): 2 flags, x,y,z, horizontal_radius(sqrt(x^2+y^2));
+With Clipping
+
+model = MLPRegressor(
+        hidden_layer_sizes=(256, 256),
+        activation="tanh",
+        solver="adam",
+        learning_rate_init=0.001,
+        max_iter=2000,
+        tol=1e-7,
+        n_iter_no_change=30,
+        early_stopping=False,
+        random_state=42
+    )
+==================== LARGE DATASET ====================
+
+Training complete!
+Iterations: 332
+Final training loss: 0.001310
+
+Validation Results:
+MAE:  0.020025
+RMSE: 0.036261
+
+Per-joint MAE:
+Joint 1: 0.018005
+Joint 2: 0.034641
+Joint 3: 0.007429
+
+Ned Validation Results:
+Samples: 2000
+MAE:  0.011278
+RMSE: 0.022530
+Per-joint MAE:
+Joint 1: 0.018968
+Joint 2: 0.008487
+Joint 3: 0.006378
+
+SCARA Validation Results:
+Samples: 2000
+MAE:  0.028772
+RMSE: 0.046067
+Per-joint MAE:
+Joint 1: 0.017041
+Joint 2: 0.060796
+Joint 3: 0.008480
+
+--- WITHOUT CLIPPING ---
+
+Ned TCP Positioning Error:
+Mean:   9.343 mm
+Median: 6.430 mm
+Max:    65.132 mm
+
+SCARA TCP Positioning Error:
+Mean:   4.500 mm
+Median: 4.244 mm
+Max:    21.839 mm
+
+Ned Joint Limit Check:
+Total samples: 2000
+Invalid samples: 22
+Invalid percentage: 1.10%
+Violations per joint:
+Joint 1: 13
+Joint 2: 4
+Joint 3: 5
+Prediction ranges:
+Joint 1: Min = -1.0702, Max = 1.0061
+Joint 2: Min = -1.0145, Max = 1.0138
+Joint 3: Min = -1.0144, Max = 1.0046
+
+SCARA Joint Limit Check:
+Total samples: 2000
+Invalid samples: 18
+Invalid percentage: 0.90%
+Violations per joint:
+Joint 1: 12
+Joint 2: 0
+Joint 3: 6
+Prediction ranges:
+Joint 1: Min = -1.0583, Max = 0.9947
+Joint 2: Min = -0.8569, Max = 0.9596
+Joint 3: Min = -1.0077, Max = 0.9847
+
+
+
+
+
+Experiment 14 (128, 128, 128 architecture):
+
+unnormalized TCP;
+Input(6): 2 flags, x,y,z, horizontal_radius(sqrt(x^2+y^2));
+With Clipping
+
+model = MLPRegressor(
+        hidden_layer_sizes=(128, 128, 128),
+        activation="relu",
+        solver="adam",
+        learning_rate_init=0.001,
+        max_iter=2000,
+        tol=1e-7,
+        n_iter_no_change=30,
+        early_stopping=False,
+        random_state=42
+    )
+==================== LARGE DATASET ====================
+
+Training complete!
+Iterations: 216
+Final training loss: 0.000607
+
+Validation Results:
+MAE:  0.013500
+RMSE: 0.027113
+
+Per-joint MAE:
+Joint 1: 0.012854
+Joint 2: 0.020640
+Joint 3: 0.007006
+
+Ned Validation Results:
+Samples: 2000
+MAE:  0.009681
+RMSE: 0.018303
+Per-joint MAE:
+Joint 1: 0.012045
+Joint 2: 0.009551
+Joint 3: 0.007447
+
+SCARA Validation Results:
+Samples: 2000
+MAE:  0.017319
+RMSE: 0.033693
+Per-joint MAE:
+Joint 1: 0.013663
+Joint 2: 0.031729
+Joint 3: 0.006564
+
+--- WITHOUT CLIPPING ---
+
+Ned TCP Positioning Error:
+Mean:   5.763 mm
+Median: 5.217 mm
+Max:    26.449 mm
+
+SCARA TCP Positioning Error:
+Mean:   3.909 mm
+Median: 3.534 mm
+Max:    14.278 mm
+
+Ned Joint Limit Check:
+Total samples: 2000
+Invalid samples: 11
+Invalid percentage: 0.55%
+Violations per joint:
+Joint 1: 3
+Joint 2: 5
+Joint 3: 3
+Prediction ranges:
+Joint 1: Min = -1.0038, Max = 1.0106
+Joint 2: Min = -1.0104, Max = 1.0162
+Joint 3: Min = -1.0150, Max = 1.0035
+
+SCARA Joint Limit Check:
+Total samples: 2000
+Invalid samples: 19
+Invalid percentage: 0.95%
+Violations per joint:
+Joint 1: 4
+Joint 2: 10
+Joint 3: 5
+Prediction ranges:
+Joint 1: Min = -1.0192, Max = 1.0040
+Joint 2: Min = -0.8380, Max = 1.0369
+Joint 3: Min = -0.9966, Max = 1.0087
+
+
+
+
+
+Experiment 15 (256, 256, 256 architecture):
+
+unnormalized TCP;
+Input(6): 2 flags, x,y,z, horizontal_radius(sqrt(x^2+y^2));
+With Clipping
+
+model = MLPRegressor(
+        hidden_layer_sizes=(256, 256, 256),
+        activation="relu",
+        solver="adam",
+        learning_rate_init=0.001,
+        max_iter=2000,
+        tol=1e-7,
+        n_iter_no_change=30,
+        early_stopping=False,
+        random_state=42
+    )
+==================== LARGE DATASET ====================
+
+Training complete!
+Iterations: 165
+Final training loss: 0.000718
+
+Validation Results:
+MAE:  0.018729
+RMSE: 0.039054
+
+Per-joint MAE:
+Joint 1: 0.014229
+Joint 2: 0.034634
+Joint 3: 0.007323
+
+Ned Validation Results:
+Samples: 2000
+MAE:  0.009845
+RMSE: 0.018391
+Per-joint MAE:
+Joint 1: 0.010705
+Joint 2: 0.008469
+Joint 3: 0.010361
+
+SCARA Validation Results:
+Samples: 2000
+MAE:  0.027612
+RMSE: 0.052079
+Per-joint MAE:
+Joint 1: 0.017752
+Joint 2: 0.060800
+Joint 3: 0.004285
+
+--- WITHOUT CLIPPING ---
+
+Ned TCP Positioning Error:
+Mean:   5.686 mm
+Median: 5.012 mm
+Max:    22.535 mm
+
+SCARA TCP Positioning Error:
+Mean:   2.413 mm
+Median: 1.761 mm
+Max:    11.162 mm
+
+Ned Joint Limit Check:
+Total samples: 2000
+Invalid samples: 8
+Invalid percentage: 0.40%
+Violations per joint:
+Joint 1: 3
+Joint 2: 4
+Joint 3: 1
+Prediction ranges:
+Joint 1: Min = -1.0003, Max = 1.0029
+Joint 2: Min = -0.9851, Max = 1.0178
+Joint 3: Min = -0.9871, Max = 1.0071
+
+SCARA Joint Limit Check:
+Total samples: 2000
+Invalid samples: 35
+Invalid percentage: 1.75%
+Violations per joint:
+Joint 1: 4
+Joint 2: 30
+Joint 3: 1
+Prediction ranges:
+Joint 1: Min = -1.0167, Max = 0.9832
+Joint 2: Min = -0.7677, Max = 1.0389
+Joint 3: Min = -0.9983, Max = 1.0011
+
+
+
+
+
+
+
+
+
+Experiment 16 (384, 384 architecture):
+
+unnormalized TCP;
+Input(6): 2 flags, x,y,z, horizontal_radius(sqrt(x^2+y^2));
+With Clipping
+
+model = MLPRegressor(
+        hidden_layer_sizes=(384, 384),
+        activation="relu",
+        solver="adam",
+        learning_rate_init=0.001,
+        max_iter=2000,
+        tol=1e-7,
+        n_iter_no_change=30,
+        early_stopping=False,
+        random_state=42
+    )
+==================== LARGE DATASET ====================
+
+Training complete!
+Iterations: 189
+Final training loss: 0.000772
+
+Validation Results:
+MAE:  0.014801
+RMSE: 0.027568
+
+Per-joint MAE:
+Joint 1: 0.014450
+Joint 2: 0.024725
+Joint 3: 0.005228
+
+Ned Validation Results:
+Samples: 2000
+MAE:  0.014615
+RMSE: 0.022358
+Per-joint MAE:
+Joint 1: 0.019031
+Joint 2: 0.018952
+Joint 3: 0.005864
+
+SCARA Validation Results:
+Samples: 2000
+MAE:  0.014986
+RMSE: 0.031938
+Per-joint MAE:
+Joint 1: 0.009870
+Joint 2: 0.030497
+Joint 3: 0.004592
+
+--- WITHOUT CLIPPING ---
+
+Ned TCP Positioning Error:
+Mean:   9.093 mm
+Median: 7.578 mm
+Max:    57.341 mm
+
+SCARA TCP Positioning Error:
+Mean:   1.753 mm
+Median: 1.458 mm
+Max:    6.066 mm
+
+Ned Joint Limit Check:
+Total samples: 2000
+Invalid samples: 29
+Invalid percentage: 1.45%
+Violations per joint:
+Joint 1: 10
+Joint 2: 17
+Joint 3: 2
+Prediction ranges:
+Joint 1: Min = -1.0166, Max = 0.9366
+Joint 2: Min = -0.9754, Max = 1.0396
+Joint 3: Min = -1.0082, Max = 1.0007
+
+SCARA Joint Limit Check:
+Total samples: 2000
+Invalid samples: 22
+Invalid percentage: 1.10%
+Violations per joint:
+Joint 1: 7
+Joint 2: 14
+Joint 3: 1
+Prediction ranges:
+Joint 1: Min = -1.0424, Max = 1.0031
+Joint 2: Min = -0.8293, Max = 1.0165
+Joint 3: Min = -0.9908, Max = 1.0047
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
