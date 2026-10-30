@@ -345,13 +345,13 @@ if __name__ == "__main__":
         #Re-train the shared Ned + SCARA neural network
         model = train_network(X_train, Y_train)
 
-        """
+        
         #IDK IF WE CAN USE THIS OR NOT, pickle NOT SAID IN PERMITTED LIBRARIES
         model_path = f"../models/shared_nn_{size}.pkl"
         with open(model_path, "wb") as file:
             pickle.dump(model, file)
         print(f"Saved model to {model_path}")
-        """
+        
 
         print("\nTraining complete!")
         print(f"Iterations: {model.n_iter_}")
