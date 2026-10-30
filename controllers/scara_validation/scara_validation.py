@@ -108,7 +108,7 @@ TCP in world frame: x=0.624, y=-0.000, z=0.032
 TCP in ARM frame: x=0.6245, y=-0.0000, z=0.0319
 
 
-The next two are fucked because the arm hits the ground at approx q4 = -0.1726
+The next two are screwed because the arm hits the ground at approx q4 = -0.1726
 Hence why it never goes beyond 0.0093 which is roughly the ground limit.
 
 
