@@ -1,0 +1,19 @@
+==================== SMALL MODEL ====================
+--- Ned SMALL Results ---
+Samples: 100
+Mean TCP error: 8.982 mm
+Std TCP error:  11.370 mm
+Saved ned_task4b_results_small.csv
+==================== MEDIUM MODEL ====================
+--- Ned MEDIUM Results ---
+Samples: 100
+Mean TCP error: 7.830 mm
+Std TCP error:  5.009 mm
+Saved ned_task4b_results_medium.csv
+==================== LARGE MODEL ====================
+--- Ned LARGE Results ---
+Samples: 100
+Mean TCP error: 9.588 mm
+Std TCP error:  8.272 mm
+Saved ned_task4b_results_large.csv
+Ned Task 4.B evaluation complete.

@@ -1,1 +1,1 @@
-# Personal_IntelligentRobotics_InverseKinematics_NeuralNetwork
+See the wiki for a basic tutorial

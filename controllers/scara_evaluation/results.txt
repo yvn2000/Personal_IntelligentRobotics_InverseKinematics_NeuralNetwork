@@ -1,0 +1,18 @@
+==================== SMALL MODEL ====================
+--- SCARA SMALL Results ---
+Samples: 100
+Mean TCP error: 4.721 mm
+Std TCP error:  3.283 mm
+Saved scara_task4b_results_small.csv
+==================== MEDIUM MODEL ====================
+--- SCARA MEDIUM Results ---
+Samples: 100
+Mean TCP error: 4.610 mm
+Std TCP error:  2.296 mm
+Saved scara_task4b_results_medium.csv
+==================== LARGE MODEL ====================
+--- SCARA LARGE Results ---
+Samples: 100
+Mean TCP error: 2.766 mm
+Std TCP error:  1.823 mm
+Saved scara_task4b_results_large.csv
